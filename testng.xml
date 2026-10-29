@@ -4,7 +4,7 @@
 <suite name="Full Test" verbose="1">
     <test name="Basic Tests">
         <classes>
-            <class name="com.herokuapp.tests.BasicLoginTest"/>
+            <class name="tests.oragehrm.demo.BasicLoginTest"/>
         </classes>
     </test>
 </suite>
