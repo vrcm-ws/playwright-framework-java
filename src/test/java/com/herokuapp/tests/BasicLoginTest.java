@@ -1,6 +1,6 @@
-package tests;
+package com.herokuapp.tests;
 
-import base.BaseTest;
+import com.herokuapp.base.BaseTest;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 import org.testng.annotations.Test;
