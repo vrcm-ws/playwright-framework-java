@@ -15,6 +15,7 @@ public class LoginPage {
     private final Locator buttonLogin;
 
     public LoginPage(Page page) {
+
         this.page = page;
 
         this.inputUsername = page.getByPlaceholder("Username");

@@ -4,7 +4,8 @@
 <suite name="Full Test" verbose="1">
     <test name="Basic Tests">
         <classes>
-            <class name="tests.oragehrm.demo.BasicLoginTest"/>
+            <class name="oragehrm.demo.tests.LoginPageTest"/>
+            <class name="oragehrm.demo.tests.DashboardPageTest"/>
         </classes>
     </test>
 </suite>

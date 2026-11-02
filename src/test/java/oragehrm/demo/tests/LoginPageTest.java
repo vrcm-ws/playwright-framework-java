@@ -1,9 +1,7 @@
 package oragehrm.demo.tests;
 
 import oragehrm.demo.base.BaseTest;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.AriaRole;
-import oragehrm.demo.pages.HomePage;
+import oragehrm.demo.pages.DashboardPage;
 import oragehrm.demo.pages.LoginPage;
 import org.testng.annotations.Test;
 
@@ -24,9 +22,9 @@ public class LoginPageTest extends BaseTest {
         loginPage.enterPassword(password);
         loginPage.clickSubmit();
 
-        HomePage homePage = new HomePage(page);
+        DashboardPage dashboardPage = new DashboardPage(page);
 
-        assertThat(homePage.getHeaderPage()).isVisible();
-        assertThat(homePage.getHeaderPage()).hasText("Dashboard");
+        assertThat(dashboardPage.getHeaderPage()).isVisible();
+        assertThat(dashboardPage.getHeaderPage()).hasText("Dashboard");
     }
 }
