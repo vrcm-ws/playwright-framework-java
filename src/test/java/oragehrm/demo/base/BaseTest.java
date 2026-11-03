@@ -10,6 +10,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import utils.ExtentManager;
+import utils.Screenshoot;
 
 import java.lang.reflect.Method;
 
@@ -50,6 +51,10 @@ public class BaseTest {
 
             case ITestResult.FAILURE:
                 test.fail(result.getThrowable());
+
+                String screenshotPath = Screenshoot.takeScreenshoot(page, result.getName());
+                test.addScreenCaptureFromPath(screenshotPath);
+
                 break;
             case ITestResult.SUCCESS:
                 test.pass("Test Passed");
