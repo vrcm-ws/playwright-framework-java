@@ -1,4 +1,4 @@
-package com.herokuapp.base;
+package oragehrm.demo.base;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
@@ -12,6 +12,7 @@ public class BaseTest {
     protected Playwright playwright;
     protected Browser browser;
     protected Page page;
+
 
     @BeforeMethod
     public void setUp() {
@@ -28,6 +29,7 @@ public class BaseTest {
 
         page = browser.newPage();
     }
+
 
     @AfterMethod
     public void tearDown() {
