@@ -1,5 +1,6 @@
 package oragehrm.demo.tests;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
 import oragehrm.demo.base.BaseTest;
 import oragehrm.demo.pages.DashboardPage;
 import oragehrm.demo.pages.LoginPage;
@@ -23,8 +24,7 @@ public class LoginPageTest extends BaseTest {
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
 
-        test.addScreenCaptureFromPath(Screenshoot.takeScreenshoot(page, "Login Page"));
-
+        test.info(Screenshoot.buildMedia(page, "Login Page"));
         loginPage.clickSubmit();
 
         test.info("Moving to Dashboard");

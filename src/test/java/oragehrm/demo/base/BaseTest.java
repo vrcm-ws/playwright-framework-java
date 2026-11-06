@@ -2,6 +2,7 @@ package oragehrm.demo.base;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
@@ -13,6 +14,7 @@ import utils.ExtentManager;
 import utils.Screenshoot;
 
 import java.lang.reflect.Method;
+import java.nio.file.Path;
 
 public class BaseTest {
 
@@ -50,11 +52,10 @@ public class BaseTest {
         switch (result.getStatus()) {
 
             case ITestResult.FAILURE:
-                test.fail(result.getThrowable());
-
                 String screenshotPath = Screenshoot.takeScreenshoot(page, result.getName());
-                test.addScreenCaptureFromPath(screenshotPath);
 
+                test.info(MediaEntityBuilder.createScreenCaptureFromBase64String(screenshotPath, "Failure").build());
+                test.fail(result.getThrowable());
                 break;
             case ITestResult.SUCCESS:
                 test.pass("Test Passed");
