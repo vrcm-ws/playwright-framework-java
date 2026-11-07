@@ -1,6 +1,5 @@
 package oragehrm.demo.tests;
 
-import com.aventstack.extentreports.MediaEntityBuilder;
 import oragehrm.demo.base.BaseTest;
 import oragehrm.demo.pages.DashboardPage;
 import oragehrm.demo.pages.LoginPage;

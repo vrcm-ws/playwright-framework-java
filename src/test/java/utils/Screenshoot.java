@@ -15,15 +15,14 @@ public class Screenshoot {
         String timestamp = new SimpleDateFormat("yyyy.MM.dd-HH.mm.ss").format(new Date());
         String filename = timestamp + " - " + name + ".png";
 
-        Path path = Path.of(System.getProperty("user.dir"), "test-output", "screenshots", filename);
-
+        Path path = Path.of( "test-output", "screenshots", filename);
         page.screenshot(new Page.ScreenshotOptions().setPath(path).setFullPage(true));
 
-        return path.toString();
+        return filename;
     }
 
     public static Media buildMedia(Page page, String name) {
 
-        return MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshoot(page, name), name).build();
+        return MediaEntityBuilder.createScreenCaptureFromPath("screenshots/" + takeScreenshoot(page, name), name).build();
     }
 }
