@@ -69,3 +69,6 @@ out/
 .factorypath
 .project
 .settings/
+
+# Framework
+test-output/
